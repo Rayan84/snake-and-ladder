@@ -22,33 +22,29 @@ function createSquares() {
 }
 createSquares();
 
+
                      // counter
-var dice = 99;
+var dice = 22;
 var counterPosition = 99;
 var squaresArray = document.querySelectorAll(".square");
 var counter = document.createElement("IMG");
     counter.setAttribute("src", "./media/gem-1.jpg");
     counter.setAttribute("class", "counter");
-
     squaresArray[counterPosition].appendChild(counter);
 
-function moveCounter(num){
-  if(dice !== 0){
+var interva = setInterval(moveCounter, 500);
+ function moveCounter(){
+   if(dice > 0){
+     counterPosition--;
+     dice--;
+     squaresArray[counterPosition].appendChild(counter);
+   }else {
+     clearInterval(interva);
+   }
+ }
 
-    setInterval(function run(num){
+ window.addEventListener("keydown",checkkey);
+ function checkkey(event){
 
-        if(dice !== 0){
-        counterPosition--;
-        squaresArray[counterPosition].appendChild(counter);
-      // alert(dice);
-       dice--;
-     }else{
-       clearInterval(run);
-     }
-      }, 500);
-
-    }else{
-      alert("else was called");
-      }
-    }
-    moveCounter();
+   alert(event.keyCode);
+ }
