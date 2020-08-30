@@ -13,6 +13,7 @@ main{
 }
 
 .square{
+  position: relative;
   background-color: green;
   border: solid red 1px;
   margin: auto;
@@ -24,6 +25,12 @@ main{
   font-size: 28px;
 }
 
-.stone {
-  z-index: 2;
+.counter {
+  width: 70%;
+  border-radius: 50%;
+  margin: auto;
+  border: double red 1px;
+  position: absolute;
+  left: 16%;
+  top: 8%;
 }

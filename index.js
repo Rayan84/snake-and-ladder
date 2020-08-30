@@ -22,7 +22,33 @@ function createSquares() {
 }
 createSquares();
 
-                     // stones
-var stonePosition = 0;
+                     // counter
+var dice = 99;
+var counterPosition = 99;
+var squaresArray = document.querySelectorAll(".square");
+var counter = document.createElement("IMG");
+    counter.setAttribute("src", "./media/gem-1.jpg");
+    counter.setAttribute("class", "counter");
 
-document.querySelectorAll(".square");
+    squaresArray[counterPosition].appendChild(counter);
+
+function moveCounter(num){
+  if(dice !== 0){
+
+    setInterval(function run(num){
+
+        if(dice !== 0){
+        counterPosition--;
+        squaresArray[counterPosition].appendChild(counter);
+      // alert(dice);
+       dice--;
+     }else{
+       clearInterval(run);
+     }
+      }, 500);
+
+    }else{
+      alert("else was called");
+      }
+    }
+    moveCounter();
