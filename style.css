@@ -1,18 +1,29 @@
 body {
 background-color: yellow;
+width: 100vw;
 }
 
 main{
     display: grid;
-    grid-template-columns: repeat(10, 100px);
+    grid-template-columns: repeat(10,8%);
     margin: auto;
-    width: 98vw;
+    grid-auto-flow: dense;
     background-color: lightblue;
     align-items: center;
 }
 
 .square{
   background-color: green;
-  border: solid white 2px;
+  border: solid red 1px;
   margin: auto;
+  text-align: center;
+  width: 100%;
+}
+
+.squareNumber{
+  font-size: 28px;
+}
+
+.stone {
+  z-index: 2;
 }
