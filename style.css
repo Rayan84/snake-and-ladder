@@ -1,0 +1,18 @@
+body {
+background-color: yellow;
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(10, 100px);
+    margin: auto;
+    width: 98vw;
+    background-color: lightblue;
+    align-items: center;
+}
+
+.square{
+  background-color: green;
+  border: solid white 2px;
+  margin: auto;
+}
