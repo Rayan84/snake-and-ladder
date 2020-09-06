@@ -5,7 +5,6 @@ background-color: yellow;
 main{
     display: grid;
     grid-template-columns: repeat(10,8vmin);
-
     margin: auto;
     background-color: lightblue;
     align-items: center;
@@ -17,22 +16,24 @@ main{
   border: solid red 1px;
   margin: auto;
   text-align: center;
-  width: 100%;
+  width: 9.5vmin;
   height: 9.5vmin;
 }
 
 .squareNumber{
-  font-size: 28px;
-  margin: auto;
+  font-size: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  margin-top: 40%;
   display: inline-block;
 }
 
 .counter {
   width: 70%;
-  border-radius: 50%;
+  border-style: hidden;
   margin: auto;
-  border: double red 1px;
   position: absolute;
-  left: 16%;
+  left: 6%;
   top: 8%;
 }
