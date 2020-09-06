@@ -19,22 +19,27 @@ createSquares();
 
 
                               // dice
-var dice = 0;
+
+                              // dice roll
+    function diceRoll(){
+         dice = Math.floor(Math.random() * 6) + 1;
+         console.log(dice);
+    }
+
+                           // dice UI
+
 function createDiceUI(){
   var diceUI = document.createElement("IMG");
   diceUI.setAttribute("class", "dice");
   diceUI.setAttribute("src", "./media/dice.gif");
   document.getElementById("main").appendChild(diceUI);
+  setTimeout(function () {
+    diceRoll();
+  }, 5000);
 }
 
-                          // dice roll
-function diceRoll(){
 
 
-     dice = Math.floor(Math.random() * 6) + 1;
-     console.log(dice);
-}
-diceRoll();
                      // counters
 
 var counterPosition = 99;
