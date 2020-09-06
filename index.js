@@ -23,8 +23,15 @@ function createSquares() {
 createSquares();
 
 
+                     // dice roll
+var dice = 0;
+function diceRoll(){
+     dice = Math.floor(Math.random() * 6) + 1;
+     console.log(dice);
+}
+diceRoll();
                      // counter
-var dice = 22;
+
 var counterPosition = 99;
 var squaresArray = document.querySelectorAll(".square");
 var counter = document.createElement("IMG");
@@ -39,12 +46,8 @@ var interva = setInterval(moveCounter, 500);
      dice--;
      squaresArray[counterPosition].appendChild(counter);
    }else {
-     clearInterval(interva);
+
+     clearInterval(interva)
+
    }
- }
-
- window.addEventListener("keydown",checkkey);
- function checkkey(event){
-
-   alert(event.keyCode);
  }
