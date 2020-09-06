@@ -26,7 +26,6 @@ function createDiceUI(){
   diceUI.setAttribute("src", "./media/dice.gif");
   document.getElementById("main").appendChild(diceUI);
 }
-createDiceUI();
 
                           // dice roll
 function diceRoll(){

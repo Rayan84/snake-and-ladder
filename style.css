@@ -10,6 +10,20 @@ main{
     align-items: center;
 }
 
+#playButton{
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  font-size: 100%;
+  color: white;
+  background-color: black;
+}
+
+#playButton:hover{
+  background-color: white;
+  color: black;
+}
+
 .square{
   position: relative;
   background-color: green;
@@ -43,4 +57,5 @@ main{
   left: 28%;
   top: 28%;
   z-index: 3;
+  max-width: 130px;
 }
