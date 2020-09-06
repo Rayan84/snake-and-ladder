@@ -18,9 +18,20 @@ function createSquares() {
 createSquares();
 
 
-                     // dice roll
+                              // dice
 var dice = 0;
+function createDiceUI(){
+  var diceUI = document.createElement("IMG");
+  diceUI.setAttribute("class", "dice");
+  diceUI.setAttribute("src", "./media/dice.gif");
+  document.getElementById("main").appendChild(diceUI);
+}
+createDiceUI();
+
+                          // dice roll
 function diceRoll(){
+
+
      dice = Math.floor(Math.random() * 6) + 1;
      console.log(dice);
 }

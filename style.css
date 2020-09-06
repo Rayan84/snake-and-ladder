@@ -37,3 +37,10 @@ main{
   left: 6%;
   top: 8%;
 }
+
+.dice {
+  position: absolute;
+  left: 28%;
+  top: 28%;
+  z-index: 3;
+}
