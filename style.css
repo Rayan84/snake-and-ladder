@@ -14,20 +14,23 @@ main{
   position: absolute;
   right: 5%;
   top: 5%;
-  font-size: 100%;
+  width: 10%;
+  border-right: solid black 1px;
+  font-size: 14px;
   color: white;
-  background-color: black;
+  line-height: 35px;
+  background: -webkit-linear-gradient(top, #8b8b8b 0%, #6a6a6a 50%, #5e5e5e 51%, #717171 100%);
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px;
 }
 
 #playButton:hover{
-  background-color: white;
-  color: black;
+  background: rgba(0, 0, 0, 0.5); 
 }
 
 .square{
   position: relative;
   background-color: green;
-  border: solid red 1px;
+  border: solid lightblue 1px;
   margin: auto;
   text-align: center;
   width: 9.5vmin;
@@ -58,4 +61,11 @@ main{
   top: 28%;
   z-index: 3;
   max-width: 130px;
+}
+
+.baloon{
+  z-index: 4;
+  position: absolute;
+  bottom: 0;
+  left: 30%;
 }
