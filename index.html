@@ -7,8 +7,12 @@
   </head>
   <body>
     <main id="main">
-
       <button id="playButton" onclick="diceRoll();">Play</button>
+      <input type="checkbox" id="checkbox" onchange="automatize();"><label id="label">Auto</lable>
+      <div id="you-win">
+        <h1>You Win!</h1>
+        <button id="play-again-btn" onclick="reset();">Play again</button>
+      </div>
 
       </main>
       <script src="index.js">
