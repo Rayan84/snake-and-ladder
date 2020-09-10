@@ -38,6 +38,8 @@ var steps;
 
 //                  dice roll
 function diceRoll() {
+  var shakeDice = document.getElementById('diceSound');
+  shakeDice.play();
   playButton.removeAttribute('onclick');
 
   //  console.log('onclick attribute removed');
