@@ -14,19 +14,27 @@ function createSquares() {
 
 createSquares();
 
-function automatize() {
-  var checkbox = document.getElementById('checkbox');
-  if (checkbox.checked == true) {
-    console.log('Auto mode activated');
-    setInterval(diceRoll, 4000);
-    playButton.removeAttribute('onclick');
-    console.log('onclick attribute removed');
-  } else {
-    playButton.setAttribute('onclick', 'diceRoll();');
-    console.log('Play button onclick attribute set to dice roll');
-    clearInterval(diceRoll);
-  }
-}
+var checkbox = document.getElementById('checkbox');
+
+var autoInterva;
+
+checkbox.addEventListener('change', function () {
+    if (this.checked) {
+      // Checkbox is checked..
+
+      console.log('Auto mode activated');
+      autoInterva = setInterval(diceRoll, 4000);
+      playButton.removeAttribute('onclick');
+      console.log('onclick attribute removed');
+
+      //  enableAuto();
+
+    } else {
+        console.log('auto disabled');
+        clearInterval(autoInterva);
+    //    disableAuto();
+    }
+});
 
 //                         dice
 var start = 0;
@@ -45,7 +53,7 @@ function diceRoll() {
   //  console.log('onclick attribute removed');
   console.log('Rolling Dice...');
   dice = Math.floor(Math.random() * 6) + 1;
-  console.log(dice);
+  console.log('dice ' + dice);
   playButton.removeAttribute('onclick');
   steps = dice;
   diceUI = document.createElement('IMG');
@@ -71,7 +79,8 @@ function diceRoll() {
 
   setTimeout(function () {
           interva = setInterval(moveCounter, 100);
-          console.log('interval triggered');
+
+          //  console.log('interval triggered');
 
           //      console.log('active player is ' + activePlayer);
           //      console.log('active player position is ' + activePlayerPosition);
@@ -109,9 +118,9 @@ function moveCounter() {
   if (steps > 0) {
     if (playerPosition - steps > 0) {
       playerPosition--;
-      console.log(playerPosition);
       steps--;
-      console.log(dice);
+
+      //console.log(dice);
       squaresArray[playerPosition].appendChild(player);
       console.log(' position ' + playerPosition);
     }else if (steps - playerPosition == 0) {
@@ -124,7 +133,9 @@ function moveCounter() {
         steps--;
         squaresArray[playerPosition].appendChild(player);
         celebration();
-        playButton.removeAttribute('onclick');
+        playerPosition = 99;
+        counter1Position = 99;
+        counter2Position = 99;
       }
 
     }else {
@@ -167,6 +178,8 @@ var youWin = document.getElementById('you-win');
 function celebration() {
   playButton.style.display = 'none';
 
+  clearInterval(autoInterva);
+  document.getElementById('checkbox').checked = false;
   setTimeout(function () {
                   youWin.style.display = 'block';
                 }, 1000);
@@ -175,10 +188,8 @@ function celebration() {
 }
 
 function reset() {
-  counter1Position = 99;
-  counter2Position = 99;
-  squaresArray[counter1Position].appendChild(counter1);
-  squaresArray[counter2Position].appendChild(counter2);
   youWin.style.display = 'none';
   playButton.style.display = 'block';
+  squaresArray[counter1Position].appendChild(counter1);
+  squaresArray[counter2Position].appendChild(counter2);
 }
