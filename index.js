@@ -179,7 +179,6 @@ var youWin = document.getElementById('you-win');
 function celebration() {
   playButton.style.display = 'none';
   var winnerImg = player.src;
-  alert(winnerImg);
   document.getElementById('winner-img').setAttribute('src', winnerImg);
 
   clearInterval(autoInterva);
