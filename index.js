@@ -15,7 +15,6 @@ function createSquares() {
 createSquares();
 
 var checkbox = document.getElementById('checkbox');
-
 var autoInterva;
 
 checkbox.addEventListener('change', function () {
@@ -30,11 +29,13 @@ checkbox.addEventListener('change', function () {
       //  enableAuto();
 
     } else {
-        console.log('auto disabled');
-        clearInterval(autoInterva);
-    //    disableAuto();
+      console.log('auto disabled');
+      clearInterval(autoInterva);
+
+      //    disableAuto();
+
     }
-});
+  });
 
 //                         dice
 var start = 0;
@@ -97,14 +98,14 @@ function deleteDiceUI() {
 
 //                                counters
 
-var counter1Position = 20;
+var counter1Position = 10;
 var squaresArray = document.querySelectorAll('.square');
 var counter1 = document.createElement('IMG');
 counter1.setAttribute('src', './media/user_2.png');
 counter1.setAttribute('class', 'counter');
 squaresArray[counter1Position].appendChild(counter1);
 
-var counter2Position = 20;
+var counter2Position = 10;
 var counter2 = document.createElement('IMG');
 counter2.setAttribute('src', './media/superman.ico');
 counter2.setAttribute('class', 'counter');
@@ -177,6 +178,9 @@ function switching() {
 var youWin = document.getElementById('you-win');
 function celebration() {
   playButton.style.display = 'none';
+  var winnerImg = player.src;
+  alert(winnerImg);
+  document.getElementById('winner-img').setAttribute('src', winnerImg);
 
   clearInterval(autoInterva);
   document.getElementById('checkbox').checked = false;
@@ -186,6 +190,8 @@ function celebration() {
 
   console.log('celebration funciton called');
 }
+
+//                         creating ladders
 
 function reset() {
   youWin.style.display = 'none';

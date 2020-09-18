@@ -1,12 +1,13 @@
 body {
 margin: 0;
-background-color: yellow;
+background-color: black;
 }
 
 main{
     display: grid;
-    grid-template-columns: repeat(10, 10.3vmin);
-    margin: 0;
+    grid-template-columns: repeat(10, 10.5vmin);
+    justify-content:flex-start;
+    margin: 1px;
     background-color: black;
     align-items: center;
 }
@@ -47,11 +48,11 @@ main{
 }
 
 #play-again-btn:hover,
-#playButton:hover{
+#playButton:hover {
   background: rgba(0, 0, 0, 0.5);
 }
 
-#you-win{
+#you-win {
   display: none;
   background-color: rgba(49, 76, 124, 0.8);
   position: absolute;
@@ -66,22 +67,42 @@ main{
   color: white;
 }
 
+#winner-img {
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+}
+
+.position-absolute {
+  position: absolute;
+  z-index: 5;
+}
+
+#ladder-1 {
+  left: 23%;
+  top: 44%;
+}
+
 .square{
+  margin: 1px;
   position: relative;
   background-color: green;
   border: solid lightblue 1px;
   text-align: center;
-  width: 9.5vmin;
-  height: 9.5vmin;
   border-radius: 5px;
 }
 
 .squareNumber{
+  padding: 2px;
   font-size: 100%;
   margin-left: auto;
   margin-right: auto;
   color: gold;
-  margin-top: 40%;
+  border: solid gold 1px;
+  border-radius: 50%;
+
   display: inline-block;
 }
 
