@@ -1,12 +1,13 @@
 body {
+margin: 0;
 background-color: yellow;
 }
 
 main{
     display: grid;
-    grid-template-columns: repeat(10,8vmin);
-    margin: auto;
-    background-color: lightblue;
+    grid-template-columns: repeat(10, 10.3vmin);
+    margin: 0;
+    background-color: black;
     align-items: center;
 }
 
@@ -69,17 +70,17 @@ main{
   position: relative;
   background-color: green;
   border: solid lightblue 1px;
-  margin: auto;
   text-align: center;
   width: 9.5vmin;
-  height: 9.5vmin
+  height: 9.5vmin;
+  border-radius: 5px;
 }
 
 .squareNumber{
   font-size: 100%;
   margin-left: auto;
   margin-right: auto;
-  color: white;
+  color: gold;
   margin-top: 40%;
   display: inline-block;
 }
