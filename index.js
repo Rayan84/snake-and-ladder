@@ -192,12 +192,14 @@ var youWin = document.getElementById('you-win');
 function celebration() {
   playButton.style.display = 'none';
   var winnerImg = player.src;
+  var victorySound = document.getElementById('victory-sound');
   document.getElementById('winner-img').setAttribute('src', winnerImg);
 
   clearInterval(autoInterva);
   document.getElementById('checkbox').checked = false;
   setTimeout(function () {
                   youWin.style.display = 'block';
+                  victorySound.play();
                 }, 1000);
 
   console.log('celebration funciton called');
