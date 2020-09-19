@@ -115,6 +115,7 @@ var playerPosition = counter1Position;
 var  player = counter1;
 
 function moveCounter() {
+  var stepSound = document.getElementById('step-sound');
   var bonusSound = document.getElementById('ladder-bonus-sound');
   if (steps > 0) {
     if (playerPosition - steps == 67) {
@@ -124,22 +125,26 @@ function moveCounter() {
         steps--;
         squaresArray[playerPosition].appendChild(player);
         console.log(' position ' + playerPosition);
-        bonusSound.play();
+        stepSound.play();
       }else {
         squaresArray[36].appendChild(player);
         playerPosition = 36;
         steps--;
+        stepSound.play();
         console.log(' position ' + playerPosition);
         console.log('Ladder, woohoo!');
+        bonusSound.play();
       }
     }else if (steps - playerPosition == 0) {
       if (steps > 1) {
         playerPosition--;
         steps--;
+        stepSound.play();
         squaresArray[playerPosition].appendChild(player);
       }else {
         playerPosition--;
         steps--;
+        stepSound.play();
         squaresArray[playerPosition].appendChild(player);
         celebration();
         playerPosition = 99;
@@ -156,6 +161,7 @@ function moveCounter() {
     }else {
       playerPosition--;
       steps--;
+      stepSound.play();
       squaresArray[playerPosition].appendChild(player);
       console.log(' position ' + playerPosition);
     }
