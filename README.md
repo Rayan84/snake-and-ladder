@@ -15,7 +15,7 @@ This project consists of building Snake And Ladder game from scratch, it's a sol
 # Built With
 * CSS
 * HTML
-* JavaScrip
+* JavaScript
 
 # Authors
 

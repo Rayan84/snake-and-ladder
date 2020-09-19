@@ -4,12 +4,27 @@ background-color: black;
 }
 
 main{
-    display: grid;
-    grid-template-columns: repeat(10, 10.5vmin);
-    justify-content:flex-start;
     margin: 1px;
     background-color: black;
     align-items: center;
+}
+
+#playBoardContainer{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  margin: auto;
+  min-width: 660px;
+  min-height: 660px;
+}
+
+#ladder-1 {
+  position: absolute;
+  right: 12%;
+  top: 33%;
+  z-index: 3;
+  width: 34%;
+  transform: rotate(-20deg);
 }
 
 #play-again-btn,
@@ -45,6 +60,7 @@ main{
   position: absolute;
   right: 10%;
   top: 12%;
+  color: white;
 }
 
 #play-again-btn:hover,
@@ -58,9 +74,8 @@ main{
   position: absolute;
   height: 30vw;
   width: 30vw;
-  top: 2vh;
-  right: 46vw;
-  border: solid white 1px;
+  top: 20%;
+  right: 20%;
   z-index: 6;
   border-radius: 8px;
   text-align: center;
@@ -80,11 +95,6 @@ main{
   z-index: 5;
 }
 
-#ladder-1 {
-  left: 23%;
-  top: 44%;
-}
-
 .square{
   margin: 1px;
   position: relative;
@@ -102,7 +112,6 @@ main{
   color: gold;
   border: solid gold 1px;
   border-radius: 50%;
-
   display: inline-block;
 }
 
@@ -113,13 +122,14 @@ main{
   position: absolute;
   left: 6%;
   top: 8%;
+  z-index: 4
 }
 
 .dice {
   position: absolute;
   left: 28%;
   top: 28%;
-  z-index: 3;
+  z-index: 5;
   max-width: 130px;
 }
 

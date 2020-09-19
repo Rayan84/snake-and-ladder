@@ -1,5 +1,5 @@
 function createSquares() {
-  var main = document.getElementById('main');
+  var playBoardContainer = document.getElementById('playBoardContainer');
   for (let i = 99; i > -1; i--) {
     var square = document.createElement('DIV');
     var squareNumber = document.createElement('P');
@@ -8,7 +8,7 @@ function createSquares() {
     squareNumber.appendChild(squareNumberText);
     square.setAttribute('class', 'square');
     square.appendChild(squareNumber);
-    main.appendChild(square);
+    playBoardContainer.appendChild(square);
   }
 }
 
@@ -98,14 +98,14 @@ function deleteDiceUI() {
 
 //                                counters
 
-var counter1Position = 10;
+var counter1Position = 70;
 var squaresArray = document.querySelectorAll('.square');
 var counter1 = document.createElement('IMG');
 counter1.setAttribute('src', './media/user_2.png');
 counter1.setAttribute('class', 'counter');
 squaresArray[counter1Position].appendChild(counter1);
 
-var counter2Position = 10;
+var counter2Position = 70;
 var counter2 = document.createElement('IMG');
 counter2.setAttribute('src', './media/superman.ico');
 counter2.setAttribute('class', 'counter');
@@ -115,15 +115,23 @@ var playerPosition = counter1Position;
 var  player = counter1;
 
 function moveCounter() {
-  //console.log('moveCounter called');
+  var bonusSound = document.getElementById('ladder-bonus-sound');
   if (steps > 0) {
-    if (playerPosition - steps > 0) {
-      playerPosition--;
-      steps--;
+    if (playerPosition - steps == 67) {
 
-      //console.log(dice);
-      squaresArray[playerPosition].appendChild(player);
-      console.log(' position ' + playerPosition);
+      if (steps > 1) {
+        playerPosition--;
+        steps--;
+        squaresArray[playerPosition].appendChild(player);
+        console.log(' position ' + playerPosition);
+        bonusSound.play();
+      }else {
+        squaresArray[36].appendChild(player);
+        playerPosition = 36;
+        steps--;
+        console.log(' position ' + playerPosition);
+        console.log('Ladder, woohoo!');
+      }
     }else if (steps - playerPosition == 0) {
       if (steps > 1) {
         playerPosition--;
@@ -139,12 +147,17 @@ function moveCounter() {
         counter2Position = 99;
       }
 
-    }else {
+    }else if (playerPosition - steps < 0) {
 
       //  alert(" You can't play!,");
       console.log("Can't play");
       clearInterval(interva);
       switching();
+    }else {
+      playerPosition--;
+      steps--;
+      squaresArray[playerPosition].appendChild(player);
+      console.log(' position ' + playerPosition);
     }
   }else {
     switching();
