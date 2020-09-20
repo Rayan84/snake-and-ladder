@@ -98,14 +98,14 @@ function deleteDiceUI() {
 
 //                                counters
 
-var counter1Position = 70;
+var counter1Position = 99;
 var squaresArray = document.querySelectorAll('.square');
 var counter1 = document.createElement('IMG');
 counter1.setAttribute('src', './media/user_2.png');
 counter1.setAttribute('class', 'counter');
 squaresArray[counter1Position].appendChild(counter1);
 
-var counter2Position = 70;
+var counter2Position = 99;
 var counter2 = document.createElement('IMG');
 counter2.setAttribute('src', './media/superman.ico');
 counter2.setAttribute('class', 'counter');
@@ -117,6 +117,7 @@ var  player = counter1;
 function moveCounter() {
   var stepSound = document.getElementById('step-sound');
   var bonusSound = document.getElementById('ladder-bonus-sound');
+  var failSound = document.getElementById('fail-sound');
   if (steps > 0) {
     if (playerPosition - steps == 67) {
 
@@ -135,6 +136,21 @@ function moveCounter() {
         console.log('Ladder, woohoo!');
         bonusSound.play();
       }
+    }else if (playerPosition - steps == 5) {
+      if (steps > 1) {
+        playerPosition--;
+        steps--;
+        squaresArray[playerPosition].appendChild(player);
+        console.log(' position ' + playerPosition);
+      }else {
+        squaresArray[74].appendChild(player);
+        playerPosition = 74;
+        steps--;
+        stepSound.play();
+        console.log(' position ' + playerPosition);
+        console.log('Oh noooo!');
+        failSound.play();
+        }
     }else if (steps - playerPosition == 0) {
       if (steps > 1) {
         playerPosition--;

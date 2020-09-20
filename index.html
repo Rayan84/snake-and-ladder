@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <meta name="viewport" content="width-device-widht, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Snake & Ladder</title>
     <link rel="stylesheet" href="style.css">
@@ -9,7 +10,9 @@
     <main id="main">
     <div style="display: inline-block">
       <div id="playBoardContainer">
-        <img id ="ladder-1" src="./media/ladder-1.png" alt="ladder-image">
+        <img id="snake-1-image" src="./media/snake-1-image.png" alt="snake image">
+        <img id="ladder-1" src="./media/ladder-1.png" alt="ladder-image">
+        <img id="ladder-3" src="./media/ladder-3.png" alt="ladder-image">
         <div id="you-win">
           <h1>You Win!</h1>
           <button id="play-again-btn" onclick="reset();">Play again</button>
@@ -18,6 +21,7 @@
       </div>
     </div>
    <div style="display: inline-block">
+      <audio id="fail-sound"><source src="./media/fail-sound.mp3" type="audio/mp3">sound is not supported</audio>
       <audio id="step-sound"><source src="./media/step-sound.mp3" type="audio/mp3">sound is not supported</audio>
       <audio id="victory-sound"><source src="./media/victory-sound.mp3" type="audio/mp3">sound is not supported</audio>
       <audio id="ladder-bonus-sound"><source src="./media/gaining-bonus-points-sound-effect.mp3" type="audio/mp3">sound is not supported</audio>

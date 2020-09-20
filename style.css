@@ -27,6 +27,23 @@ main{
   transform: rotate(-20deg);
 }
 
+#ladder-3{
+  position: absolute;
+  z-index: 3;
+  width: 80px;
+  height: 350px;
+  right: 79%;
+  top: 24%;
+  transform: rotate(23deg);
+}
+#snake-1-image {
+  position: absolute;
+  top: 7%;
+  right: 20%;
+  z-index: 4;
+  transform: rotate(-50deg);
+}
+
 #play-again-btn,
 #playButton {
   border-right: solid black 1px;
