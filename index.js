@@ -120,7 +120,6 @@ function moveCounter() {
   var failSound = document.getElementById('fail-sound');
   if (steps > 0) {
     if (playerPosition - steps == 70) {
-
       if (steps > 1) {
         playerPosition--;
         steps--;
@@ -162,6 +161,21 @@ function moveCounter() {
       }else {
         squaresArray[74].appendChild(player);
         playerPosition = 74;
+        steps--;
+        stepSound.play();
+        console.log(' position ' + playerPosition);
+        console.log('Oh noooo!');
+        failSound.play();
+      }
+    }else if (playerPosition - steps == 52) {
+      if (steps > 1) {
+        playerPosition--;
+        steps--;
+        squaresArray[playerPosition].appendChild(player);
+        console.log(' position ' + playerPosition);
+      }else {
+        squaresArray[93].appendChild(player);
+        playerPosition = 93;
         steps--;
         stepSound.play();
         console.log(' position ' + playerPosition);

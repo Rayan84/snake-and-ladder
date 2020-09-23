@@ -44,6 +44,14 @@ main{
   transform: rotate(-50deg);
 }
 
+#snake-2-image {
+  position: absolute;
+  top: 63%;
+  right: 48%;
+  z-index: 4;
+  transform: rotate(250deg);
+}
+
 #play-again-btn,
 #playButton {
   border-right: solid black 1px;
