@@ -98,14 +98,14 @@ function deleteDiceUI() {
 
 //                                counters
 
-var counter1Position = 99;
+var counter1Position = 79;
 var squaresArray = document.querySelectorAll('.square');
 var counter1 = document.createElement('IMG');
 counter1.setAttribute('src', './media/user_2.png');
 counter1.setAttribute('class', 'counter');
 squaresArray[counter1Position].appendChild(counter1);
 
-var counter2Position = 99;
+var counter2Position = 79;
 var counter2 = document.createElement('IMG');
 counter2.setAttribute('src', './media/superman.ico');
 counter2.setAttribute('class', 'counter');
@@ -119,7 +119,24 @@ function moveCounter() {
   var bonusSound = document.getElementById('ladder-bonus-sound');
   var failSound = document.getElementById('fail-sound');
   if (steps > 0) {
-    if (playerPosition - steps == 67) {
+    if (playerPosition - steps == 70) {
+
+      if (steps > 1) {
+        playerPosition--;
+        steps--;
+        squaresArray[playerPosition].appendChild(player);
+        console.log(' position ' + playerPosition);
+        stepSound.play();
+      }else {
+        squaresArray[22].appendChild(player);
+        playerPosition = 22;
+        steps--;
+        stepSound.play();
+        console.log(' position ' + playerPosition);
+        console.log('Ladder, woohoo!');
+        bonusSound.play();
+      }
+    }else if (playerPosition - steps == 67) {
 
       if (steps > 1) {
         playerPosition--;
@@ -150,7 +167,7 @@ function moveCounter() {
         console.log(' position ' + playerPosition);
         console.log('Oh noooo!');
         failSound.play();
-        }
+      }
     }else if (steps - playerPosition == 0) {
       if (steps > 1) {
         playerPosition--;
@@ -167,7 +184,6 @@ function moveCounter() {
         counter1Position = 99;
         counter2Position = 99;
       }
-
     }else if (playerPosition - steps < 0) {
 
       //  alert(" You can't play!,");
