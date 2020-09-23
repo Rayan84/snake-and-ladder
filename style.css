@@ -27,6 +27,14 @@ main{
   transform: rotate(-20deg);
 }
 
+#ladder-2{
+  position: absolute;
+  z-index: 3;
+  right: 30.5%;
+  top: 76%;
+  width: 60px;
+}
+
 #ladder-3{
   position: absolute;
   z-index: 3;
@@ -36,6 +44,7 @@ main{
   top: 24%;
   transform: rotate(23deg);
 }
+
 #snake-1-image {
   position: absolute;
   top: 7%;
@@ -173,7 +182,7 @@ main{
   border-style: hidden;
   margin: auto;
   position: absolute;
-  left: 6%;
+  left: 5%;
   top: 8%;
   z-index: 4
 }

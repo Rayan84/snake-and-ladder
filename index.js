@@ -47,8 +47,6 @@ var steps;
 
 //                  dice roll
 function diceRoll() {
-  //var shakeDice = document.getElementById('diceSound');
-  //shakeDice.play();
   audioPlayer(4);
   playButton.removeAttribute('onclick');
 
@@ -109,7 +107,7 @@ squaresArray[counter1Position].appendChild(counter1);
 
 var counter2Position = 99;
 var counter2 = document.createElement('IMG');
-counter2.setAttribute('src', './media/superman.ico');
+counter2.setAttribute('src', './media/superman.png');
 counter2.setAttribute('class', 'counter');
 squaresArray[counter2Position].appendChild(counter2);
 
@@ -117,16 +115,31 @@ var playerPosition = counter1Position;
 var  player = counter1;
 
 function audioPlayer(num) {
+  var soundCheckbox = document.getElementById('sound-checkbox');
   var sounds = document.querySelectorAll('audio');
-  sounds[num].play();
+  if (soundCheckbox.checked == true) {
+    sounds[num].play();
+  }
 }
 
 function moveCounter() {
-  var stepSound = document.getElementById('step-sound');
-  var bonusSound = document.getElementById('ladder-bonus-sound');
-  var failSound = document.getElementById('fail-sound');
   if (steps > 0) {
-    if (playerPosition - steps == 70) {
+    if (playerPosition - steps == 86) {
+      if (steps > 1) {
+        playerPosition--;
+        steps--;
+        squaresArray[playerPosition].appendChild(player);
+        console.log(' position ' + playerPosition);
+        audioPlayer(1);
+      }else {
+        squaresArray[76].appendChild(player);
+        playerPosition = 76;
+        steps--;
+        console.log(' position ' + playerPosition);
+        console.log('Ladder, woohoo!');
+        audioPlayer(3);
+      }
+    }else if (playerPosition - steps == 70) {
       if (steps > 1) {
         playerPosition--;
         steps--;
@@ -137,13 +150,11 @@ function moveCounter() {
         squaresArray[22].appendChild(player);
         playerPosition = 22;
         steps--;
-        audioPlayer(1);
         console.log(' position ' + playerPosition);
         console.log('Ladder, woohoo!');
-        bonusSound.play();
+        audioPlayer(3);
       }
     }else if (playerPosition - steps == 67) {
-
       if (steps > 1) {
         playerPosition--;
         steps--;
@@ -157,7 +168,7 @@ function moveCounter() {
         audioPlayer(1);
         console.log(' position ' + playerPosition);
         console.log('Ladder, woohoo!');
-        bonusSound.play();
+        audioPlayer(3);
       }
     }else if (playerPosition - steps == 5) {
       if (steps > 1) {
@@ -172,7 +183,7 @@ function moveCounter() {
         audioPlayer(1);
         console.log(' position ' + playerPosition);
         console.log('Oh noooo!');
-        failSound.play();
+        audioPlayer(0);
       }
     }else if (playerPosition - steps == 10) {
       if (steps > 1) {
@@ -187,7 +198,7 @@ function moveCounter() {
         audioPlayer(1);
         console.log(' position ' + playerPosition);
         console.log('Oh noooo!');
-        failSound.play();
+        audioPlayer(0);
       }
     }else if (playerPosition - steps == 52) {
       if (steps > 1) {
@@ -202,7 +213,7 @@ function moveCounter() {
         audioPlayer(1);
         console.log(' position ' + playerPosition);
         console.log('Oh noooo!');
-        failSound.play();
+        audioPlayer(0);
       }
     }else if (playerPosition - steps == 28) {
       if (steps > 1) {
@@ -217,7 +228,7 @@ function moveCounter() {
         audioPlayer(1);
         console.log(' position ' + playerPosition);
         console.log('Oh noooo!');
-        failSound.play();
+        audioPlayer(0);
       }
     }else if (steps - playerPosition == 0) {
       if (steps > 1) {
@@ -282,14 +293,13 @@ var youWin = document.getElementById('you-win');
 function celebration() {
   playButton.style.display = 'none';
   var winnerImg = player.src;
-  var victorySound = document.getElementById('victory-sound');
   document.getElementById('winner-img').setAttribute('src', winnerImg);
 
   clearInterval(autoInterva);
   document.getElementById('checkbox').checked = false;
   setTimeout(function () {
                   youWin.style.display = 'block';
-                  victorySound.play();
+                  audioPlayer(2);
                 }, 1000);
 
   console.log('celebration funciton called');
