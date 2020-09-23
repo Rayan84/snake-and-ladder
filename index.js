@@ -47,8 +47,9 @@ var steps;
 
 //                  dice roll
 function diceRoll() {
-  var shakeDice = document.getElementById('diceSound');
-  shakeDice.play();
+  //var shakeDice = document.getElementById('diceSound');
+  //shakeDice.play();
+  audioPlayer(4);
   playButton.removeAttribute('onclick');
 
   //  console.log('onclick attribute removed');
@@ -79,6 +80,7 @@ function diceRoll() {
       }, 2000);
 
   setTimeout(function () {
+          squaresArray[playerPosition].style.backgroundColor = 'green';
           interva = setInterval(moveCounter, 100);
 
           //  console.log('interval triggered');
@@ -98,14 +100,14 @@ function deleteDiceUI() {
 
 //                                counters
 
-var counter1Position = 79;
+var counter1Position = 99;
 var squaresArray = document.querySelectorAll('.square');
 var counter1 = document.createElement('IMG');
 counter1.setAttribute('src', './media/user_2.png');
 counter1.setAttribute('class', 'counter');
 squaresArray[counter1Position].appendChild(counter1);
 
-var counter2Position = 79;
+var counter2Position = 99;
 var counter2 = document.createElement('IMG');
 counter2.setAttribute('src', './media/superman.ico');
 counter2.setAttribute('class', 'counter');
@@ -113,6 +115,11 @@ squaresArray[counter2Position].appendChild(counter2);
 
 var playerPosition = counter1Position;
 var  player = counter1;
+
+function audioPlayer(num) {
+  var sounds = document.querySelectorAll('audio');
+  sounds[num].play();
+}
 
 function moveCounter() {
   var stepSound = document.getElementById('step-sound');
@@ -125,12 +132,12 @@ function moveCounter() {
         steps--;
         squaresArray[playerPosition].appendChild(player);
         console.log(' position ' + playerPosition);
-        stepSound.play();
+        audioPlayer(1);
       }else {
         squaresArray[22].appendChild(player);
         playerPosition = 22;
         steps--;
-        stepSound.play();
+        audioPlayer(1);
         console.log(' position ' + playerPosition);
         console.log('Ladder, woohoo!');
         bonusSound.play();
@@ -142,12 +149,12 @@ function moveCounter() {
         steps--;
         squaresArray[playerPosition].appendChild(player);
         console.log(' position ' + playerPosition);
-        stepSound.play();
+        audioPlayer(1);
       }else {
         squaresArray[36].appendChild(player);
         playerPosition = 36;
         steps--;
-        stepSound.play();
+        audioPlayer(1);
         console.log(' position ' + playerPosition);
         console.log('Ladder, woohoo!');
         bonusSound.play();
@@ -162,7 +169,22 @@ function moveCounter() {
         squaresArray[74].appendChild(player);
         playerPosition = 74;
         steps--;
-        stepSound.play();
+        audioPlayer(1);
+        console.log(' position ' + playerPosition);
+        console.log('Oh noooo!');
+        failSound.play();
+      }
+    }else if (playerPosition - steps == 10) {
+      if (steps > 1) {
+        playerPosition--;
+        steps--;
+        squaresArray[playerPosition].appendChild(player);
+        console.log(' position ' + playerPosition);
+      }else {
+        squaresArray[30].appendChild(player);
+        playerPosition = 30;
+        steps--;
+        audioPlayer(1);
         console.log(' position ' + playerPosition);
         console.log('Oh noooo!');
         failSound.play();
@@ -177,7 +199,22 @@ function moveCounter() {
         squaresArray[93].appendChild(player);
         playerPosition = 93;
         steps--;
-        stepSound.play();
+        audioPlayer(1);
+        console.log(' position ' + playerPosition);
+        console.log('Oh noooo!');
+        failSound.play();
+      }
+    }else if (playerPosition - steps == 28) {
+      if (steps > 1) {
+        playerPosition--;
+        steps--;
+        squaresArray[playerPosition].appendChild(player);
+        console.log(' position ' + playerPosition);
+      }else {
+        squaresArray[48].appendChild(player);
+        playerPosition = 48;
+        steps--;
+        audioPlayer(1);
         console.log(' position ' + playerPosition);
         console.log('Oh noooo!');
         failSound.play();
@@ -186,12 +223,12 @@ function moveCounter() {
       if (steps > 1) {
         playerPosition--;
         steps--;
-        stepSound.play();
+        audioPlayer(1);
         squaresArray[playerPosition].appendChild(player);
       }else {
         playerPosition--;
         steps--;
-        stepSound.play();
+        audioPlayer(1);
         squaresArray[playerPosition].appendChild(player);
         celebration();
         playerPosition = 99;
@@ -207,12 +244,13 @@ function moveCounter() {
     }else {
       playerPosition--;
       steps--;
-      stepSound.play();
+      audioPlayer(1);
       squaresArray[playerPosition].appendChild(player);
       console.log(' position ' + playerPosition);
     }
   }else {
     switching();
+    squaresArray[playerPosition].style.backgroundColor = 'coral';
   }
 }
 

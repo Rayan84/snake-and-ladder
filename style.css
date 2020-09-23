@@ -52,6 +52,21 @@ main{
   transform: rotate(250deg);
 }
 
+#snake-3-image {
+  position: absolute;
+  top: 11%;
+  right: 84%;
+  z-index: 4;
+}
+
+#snake-4-image {
+  position: absolute;
+  top: 24%;
+  right: 1%;
+  z-index: 4;
+  transform: scaleX(-1);
+}
+
 #play-again-btn,
 #playButton {
   border-right: solid black 1px;
@@ -75,16 +90,29 @@ main{
   width: 10%;
 }
 
-#checkbox{
+#checkbox {
   position: absolute;
   right: 14%;
   top: 12%;
+}
+
+#sound-checkbox {
+  position: absolute;
+  right: 14%;
+  top: 15%;
 }
 
 #label{
   position: absolute;
   right: 10%;
   top: 12%;
+  color: white;
+}
+
+#sound-label{
+  position: absolute;
+  right: 9%;
+  top: 15%;
   color: white;
 }
 
