@@ -136,12 +136,15 @@ main{
   position: absolute;
   height: 30vw;
   width: 30vw;
-  top: 20%;
-  right: 20%;
-  z-index: 6;
   border-radius: 8px;
   text-align: center;
   color: white;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  z-index: 20;
 }
 
 #winner-img {
@@ -195,9 +198,10 @@ main{
   max-width: 130px;
 }
 
-.baloon{
-  z-index: 4;
-  position: absolute;
-  bottom: 0;
-  left: 30%;
+@media screen and (max-width: 768px){
+
+ #you-win-sm {
+
+ }
+
 }
