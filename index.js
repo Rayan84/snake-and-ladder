@@ -44,6 +44,22 @@ var diceUI;
 var dice;
 var interva;
 var steps;
+var ladderOne = document.getElementById('ladder-1');
+var ladderTwo = document.getElementById('ladder-2');
+var ladderThree = document.getElementById('ladder-3');
+var snakeOne = document.getElementById('snake-1-image');
+var snakeTwo = document.getElementById('snake-2-image');
+var snakeThree = document.getElementById('snake-3-image');
+var snakeFour = document.getElementById('snake-4-image');
+
+function invertColor(item) {
+  item.style.filter = 'invert(80%)';
+  console.log('color inverted');
+  setTimeout(function () {
+    item.style.filter = 'invert(0%)';
+    console.log('image color inverted back');
+  }, 800);
+}
 
 //                  dice roll
 function diceRoll() {
@@ -137,6 +153,7 @@ function moveCounter() {
         steps--;
         console.log(' position ' + playerPosition);
         console.log('Ladder, woohoo!');
+        invertColor(ladderTwo);
         audioPlayer(3);
       }
     }else if (playerPosition - steps == 70) {
@@ -153,6 +170,7 @@ function moveCounter() {
         console.log(' position ' + playerPosition);
         console.log('Ladder, woohoo!');
         audioPlayer(3);
+        invertColor(ladderThree);
       }
     }else if (playerPosition - steps == 67) {
       if (steps > 1) {
@@ -169,6 +187,7 @@ function moveCounter() {
         console.log(' position ' + playerPosition);
         console.log('Ladder, woohoo!');
         audioPlayer(3);
+        invertColor(ladderOne);
       }
     }else if (playerPosition - steps == 5) {
       if (steps > 1) {
@@ -184,6 +203,7 @@ function moveCounter() {
         console.log(' position ' + playerPosition);
         console.log('Oh noooo!');
         audioPlayer(0);
+        invertColor(snakeOne);
       }
     }else if (playerPosition - steps == 10) {
       if (steps > 1) {
@@ -199,6 +219,7 @@ function moveCounter() {
         console.log(' position ' + playerPosition);
         console.log('Oh noooo!');
         audioPlayer(0);
+        invertColor(snakeThree);
       }
     }else if (playerPosition - steps == 52) {
       if (steps > 1) {
@@ -214,6 +235,7 @@ function moveCounter() {
         console.log(' position ' + playerPosition);
         console.log('Oh noooo!');
         audioPlayer(0);
+        invertColor(snakeTwo);
       }
     }else if (playerPosition - steps == 28) {
       if (steps > 1) {
@@ -229,6 +251,7 @@ function moveCounter() {
         console.log(' position ' + playerPosition);
         console.log('Oh noooo!');
         audioPlayer(0);
+        invertColor(snakeFour);
       }
     }else if (steps - playerPosition == 0) {
       if (steps > 1) {
@@ -302,7 +325,7 @@ function celebration() {
                   audioPlayer(2);
                 }, 1000);
 
-  console.log('celebration funciton called');
+  console.log('celebration function called');
 }
 
 //                         creating ladders
