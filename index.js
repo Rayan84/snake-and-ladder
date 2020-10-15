@@ -13,7 +13,6 @@ function createSquares() {
 }
 
 createSquares();
-
 var checkbox = document.getElementById('checkbox');
 var autoInterva;
 
@@ -53,10 +52,10 @@ var snakeThree = document.getElementById('snake-3-image');
 var snakeFour = document.getElementById('snake-4-image');
 
 function invertColor(item) {
-  item.style.filter = 'invert(80%)';
+  item.style.filter = 'brightness(200%)';
   console.log('color inverted');
   setTimeout(function () {
-    item.style.filter = 'invert(0%)';
+    item.style.filter = 'brightness(100%)';
     console.log('image color inverted back');
   }, 800);
 }
@@ -284,7 +283,6 @@ function moveCounter() {
     }
   }else {
     switching();
-    squaresArray[playerPosition].style.backgroundColor = 'coral';
   }
 }
 
@@ -309,6 +307,7 @@ function switching() {
   }
 
   clearInterval(interva);
+  squaresArray[playerPosition].style.backgroundColor = 'coral';
   console.log('============================');
 }
 
