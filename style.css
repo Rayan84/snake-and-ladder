@@ -127,7 +127,8 @@ main{
 
 #play-again-btn:hover,
 #playButton:hover {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgb(50, 0, 0);
+  font-weight: bold;
 }
 
 #you-win {
