@@ -4,7 +4,7 @@ Snake And Ladder Game
 
 
 
-This project consists of building Snake And Ladder game from scratch, it's a solo activity is still under progress...
+This project consists of building Snake And Ladder game from scratch, it's a solo activity and is still under progress...
 
 # Screenshot
 <img src='./media/snake%20and%20ladder.png'>
